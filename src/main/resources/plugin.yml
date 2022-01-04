@@ -1,0 +1,6 @@
+name: MineCraftKotlinPlugin_1
+main: me.daseul.com.Main
+version: 1.0_SNAPSHOT
+author: Daseul
+commands:
+  kotlinplugin:
