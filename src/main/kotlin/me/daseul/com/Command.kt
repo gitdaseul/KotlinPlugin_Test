@@ -68,6 +68,7 @@ class Command: TabExecutor {
         TapCommand1?.add("testcommand")
         TapCommand1?.add("info")
         TapCommand1?.add("game")
+        TapCommand1?.add("kotlin")
         return TapCommand1
     }
     fun TapCommand2(): MutableList<String>? {
