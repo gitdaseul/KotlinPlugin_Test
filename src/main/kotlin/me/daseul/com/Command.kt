@@ -8,8 +8,8 @@ import org.bukkit.event.player.PlayerAdvancementDoneEvent
 
 class Command: TabExecutor {
 
-    var TapCommand1: MutableList<String>? = ArrayList<String>()
-    var TapCommand2: MutableList<String>? = ArrayList<String>()
+    var TabCommand1: MutableList<String>? = ArrayList<String>()
+    var TabCommand2: MutableList<String>? = ArrayList<String>()
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if(sender is Player){
             val p: Player = sender
@@ -47,6 +47,7 @@ class Command: TabExecutor {
                 }
             }
         }
+
         return false
     }
 
@@ -57,23 +58,23 @@ class Command: TabExecutor {
         args: Array<out String>
     ): MutableList<String>? {
         if(args.size == 1){
-            return TapCommand1()
+            return TabCommand1()
         }
         if(args.size == 2){
-            return TapCommand2()
+            return TabCommand2()
         }
         return null
     }
-    fun TapCommand1(): MutableList<String>? {
-        TapCommand1?.add("testcommand")
-        TapCommand1?.add("info")
-        TapCommand1?.add("game")
-        TapCommand1?.add("kotlin")
-        return TapCommand1
+    fun TabCommand1(): MutableList<String>? {
+        TabCommand1?.add("testcommand")
+        TabCommand1?.add("info")
+        TabCommand1?.add("game")
+        TabCommand1?.add("kotlin")
+        return TabCommand1
     }
-    fun TapCommand2(): MutableList<String>? {
-        TapCommand2?.add("start")
-        TapCommand2?.add("end")
-        return TapCommand2
+    fun TabCommand2(): MutableList<String>? {
+        TabCommand2?.add("start")
+        TabCommand2?.add("end")
+        return TabCommand2
     }
 }
