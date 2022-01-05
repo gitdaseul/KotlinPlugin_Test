@@ -32,9 +32,9 @@ class Command: TabExecutor {
             if(args.size > 0){
                 if(args[0] == "game"){
                     if(args[1] == "start"){
-                        p.sendTitle( "게임을 시작합니다", "KotlinsendTitleTestGame", 0, 10, 0)
+                        p.sendTitle( "게임을 시작합니다", "KotlinsendTitleTestGame", 0, 20, 0)
                     } else if (args[1] == "end"){
-                        p.sendTitle("게임을 종료합니다", "KotlinsendTitleTestGame", 0, 10, 0)
+                        p.sendTitle("게임을 종료합니다", "KotlinsendTitleTestGame", 0, 20, 0)
                     }
                 }
             }
@@ -47,7 +47,24 @@ class Command: TabExecutor {
                 }
             }
         }
-
+        if(sender is Player){
+            val p: Player = sender
+            if(args.size > 0){
+                if(args[0] == "build"){
+                    if(args[1] == "code"){
+                        if(args[2] == readLine()){
+                            var input = args[2]
+                            p.sendMessage(input + "을(를) Build 했습니다!")
+                            p.sendTitle(p.health.toString(), "완료!", 0, 15, 0)
+                            p.sendMessage("By Daseul")
+                        }
+                    }
+                    if(args[1] == "info"){
+                        p.sendMessage("(/)Build 명령어는 MKP_1의 자체 제작 Build Tool입니다")
+                    }
+                }
+            }
+        }
         return false
     }
 
@@ -70,11 +87,13 @@ class Command: TabExecutor {
         TabCommand1?.add("info")
         TabCommand1?.add("game")
         TabCommand1?.add("kotlin")
+        TabCommand1?.add("build")
         return TabCommand1
     }
     fun TabCommand2(): MutableList<String>? {
         TabCommand2?.add("start")
         TabCommand2?.add("end")
+        TabCommand2?.add("code")
         return TabCommand2
     }
 }
